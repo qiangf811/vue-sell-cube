@@ -5,9 +5,13 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "report": "vue-cli-service build --report"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "cube-ui": "~1.12.1",
+    "moment": "^2.23.0",
     "vue": "^2.5.17"
   },
   "devDependencies": {
@@ -20,6 +24,13 @@
     "eslint-plugin-vue": "^5.0.0-0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vue-cli-plugin-cube-ui": "^0.2.4",
     "vue-template-compiler": "^2.5.17"
+  },
+  "transformModules": {
+    "cube-ui": {
+      "transform": "cube-ui/src/modules/${member}",
+      "kebabCase": true
+    }
   }
 }

@@ -1,26 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <VHeader :seller="seller"/>
+    <!-- <cube-button>你好</cube-button> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import VHeader from './components/Header'
+import moment from 'moment'
+import { getSeller } from 'api'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    VHeader
+  },
+  data: () => ({
+    seller: {}
+  }),
+  async created () {
+    this._getSeller()
+    console.log(moment.now())
+  },
+  methods: {
+    async _getSeller () {
+      try {
+        const seller = await getSeller()
+        this.seller = seller
+      } catch (error) {}
+    }
   }
 }
 </script>
-<style lang="stylus">
-#app
-  font-family 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
-</style>

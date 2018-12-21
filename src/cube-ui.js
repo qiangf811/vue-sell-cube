@@ -1,4 +1,4 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 
 // By default we import all the components.
 // Only reserve the components on demand and remove the rest.

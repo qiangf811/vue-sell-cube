@@ -73,7 +73,7 @@
 import SupportIco from 'components/support-ico'
 
 export default {
-  name: "v-header",
+  name: 'v-header',
   props: {
     seller: {
       type: Object,

@@ -7,6 +7,7 @@ function resolve (dir) {
 }
 
 module.exports = {
+  baseUrl: '',
   css: {
     loaderOptions: {
       stylus: {
